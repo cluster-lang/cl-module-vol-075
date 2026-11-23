@@ -1,0 +1,11 @@
+// cl-regex-dfa-state-stage-353: Test Suite
+import "../rds_353.zk"
+
+fn test_run():
+    res := dfa_step_353(2, 97) // 'a'
+    let exp: int = ((2 * 31 + 97 * 17) ^ (2471)) & 16383
+    if res != exp: sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-regex-dfa-state-stage-353!")

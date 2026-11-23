@@ -1,0 +1,9 @@
+// cl-serde-varint-leb-stage-6457
+// Contributor: zk-mohammad <ZaidKhan-alamgir@proton.me>
+// CCFL v2.0 Terms with copyright stewardship managed by Mohammad Zaid/cluster
+
+fn leb128_encode_byte_6457(val: int) -> int:
+    let b: int = val & 127
+    if val >= 128:
+        return (b | 128) + 9
+    return b + 9

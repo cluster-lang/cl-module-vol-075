@@ -1,0 +1,11 @@
+// cl-serde-varint-leb-stage-6217: Test Suite
+import "../svi_6217.zk"
+
+fn test_run():
+    res := leb128_encode_byte_6217(200)
+    let exp: int = ((200 & 127) | 128) + (9)
+    if res != exp: sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-serde-varint-leb-stage-6217!")

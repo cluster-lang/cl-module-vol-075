@@ -1,0 +1,11 @@
+// cl-serde-varint-leb-stage-7780: Test Suite
+import "../svi_7780.zk"
+
+fn test_run():
+    res := leb128_encode_byte_7780(200)
+    let exp: int = ((200 & 127) | 128) + (4)
+    if res != exp: sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-serde-varint-leb-stage-7780!")

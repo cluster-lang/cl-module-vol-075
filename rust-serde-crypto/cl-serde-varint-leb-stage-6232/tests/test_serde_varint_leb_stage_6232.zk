@@ -1,0 +1,11 @@
+// cl-serde-varint-leb-stage-6232: Test Suite
+import "../svi_6232.zk"
+
+fn test_run():
+    res := leb128_encode_byte_6232(200)
+    let exp: int = ((200 & 127) | 128) + (8)
+    if res != exp: sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-serde-varint-leb-stage-6232!")

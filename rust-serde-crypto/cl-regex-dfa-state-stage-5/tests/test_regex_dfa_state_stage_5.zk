@@ -1,0 +1,11 @@
+// cl-regex-dfa-state-stage-5: Test Suite
+import "../rds_5.zk"
+
+fn test_run():
+    res := dfa_step_5(2, 97) // 'a'
+    let exp: int = ((2 * 31 + 97 * 17) ^ (35)) & 16383
+    if res != exp: sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-regex-dfa-state-stage-5!")

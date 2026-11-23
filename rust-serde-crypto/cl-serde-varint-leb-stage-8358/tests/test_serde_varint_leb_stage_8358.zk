@@ -1,0 +1,11 @@
+// cl-serde-varint-leb-stage-8358: Test Suite
+import "../svi_8358.zk"
+
+fn test_run():
+    res := leb128_encode_byte_8358(200)
+    let exp: int = ((200 & 127) | 128) + (6)
+    if res != exp: sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-serde-varint-leb-stage-8358!")
